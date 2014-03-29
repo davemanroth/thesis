@@ -9,6 +9,10 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
+// Database
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://localhost:27017/expressTest1', {native_parser:true});
+
 var app = express();
 
 // all environments
@@ -31,6 +35,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/test1', routes.test1);
+app.get('/userlist', routes.userlist(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
