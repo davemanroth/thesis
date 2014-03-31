@@ -1,5 +1,31 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	p This is the home page
+	#wrapper
+
+		#userInfo.left
+			h2 User info
+			.box
+				strong Name:
+				span#userInfoName
+				br
+				strong Age:
+				span#userInfoAge
+				br
+				strong Gender:
+				span#userInfoGender
+				br
+				strong Location:
+				span#userInfoLocation
+
+		#userList.left
+			h2 User list
+			.box
+				table
+					thead
+						th username
+						th email
+						th delete
+					tbody

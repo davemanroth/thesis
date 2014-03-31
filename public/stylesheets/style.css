@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+.box{padding:5px 10px; margin-right:18px; min-width:300px;}
+.right{float:right;}
+.left{float:left;}
